@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Merchant extends Model
+{
+    use HasFactory;
+    protected $table = 'm_merchant';
+
+    public function devices()
+    {
+        return $this->hasMany('App\Models\Device', 'id_merchant', 'id_merchant');
+    }
+}
